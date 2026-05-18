@@ -96,12 +96,48 @@
 
     .hero-desc {
       font-size:1.15rem;font-weight:400;color:var(--sub);
-      max-width:520px;line-height:1.85;margin-bottom:3rem;
+      max-width:520px;line-height:1.85;margin-bottom:2.5rem;
       border-left:2px solid var(--gold);padding-left:1.5rem;
       opacity:0;animation:up .8s ease .35s forwards;
     }
 
-    .hero-ctas { display:flex;gap:1.25rem;flex-wrap:wrap;opacity:0;animation:up .8s ease .45s forwards; }
+    /* CV DOWNLOAD BLOCK */
+    .cv-block {
+      background:var(--surface);
+      border:1px solid var(--border);
+      padding:1.5rem 2rem;
+      margin-bottom:2rem;
+      max-width:520px;
+      opacity:0;animation:up .8s ease .45s forwards;
+    }
+    .cv-block-label {
+      font-family:var(--mono);font-size:.65rem;color:var(--gold);
+      letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+      margin-bottom:1rem;display:flex;align-items:center;gap:.75rem;
+    }
+    .cv-block-label::before { content:'';display:block;width:20px;height:1px;background:var(--gold); }
+    .cv-btns { display:flex;gap:.75rem;flex-wrap:wrap; }
+    .cv-btn {
+      font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;
+      text-transform:uppercase;text-decoration:none;
+      padding:.75rem 1.5rem;border:1px solid;
+      transition:all .25s ease;display:flex;align-items:center;gap:.6rem;
+      font-weight:500;flex:1;justify-content:center;min-width:140px;
+    }
+    .cv-btn-en {
+      background:var(--gold);color:#f5f0e8;border-color:var(--gold);
+    }
+    .cv-btn-en:hover { background:transparent;color:var(--gold); }
+    .cv-btn-it {
+      background:transparent;color:var(--text);border-color:var(--border2);
+    }
+    .cv-btn-it:hover { border-color:var(--gold);color:var(--gold); }
+    .cv-flag { font-size:.85rem;line-height:1; }
+
+    .hero-ctas {
+      display:flex;gap:1.25rem;flex-wrap:wrap;
+      opacity:0;animation:up .8s ease .55s forwards;
+    }
 
     .btn {
       font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;
@@ -128,7 +164,7 @@
       display:grid;grid-template-columns:180px 1fr;gap:3.5rem;
       padding:3rem 0;border-bottom:1px solid var(--border);align-items:start;
     }
-    .exp-date { font-family:var(--mono);font-size:.68rem;color:var(--muted);letter-spacing:.1em;margin-bottom:.75rem;font-weight:400; }
+    .exp-date { font-family:var(--mono);font-size:.68rem;color:var(--muted);letter-spacing:.1em;margin-bottom:.75rem; }
     .exp-org { font-family:var(--mono);font-size:.72rem;color:var(--gold);letter-spacing:.05em;line-height:1.7;font-weight:500; }
     .exp-role { font-family:var(--serif);font-size:2rem;font-weight:400;margin-bottom:1rem;line-height:1.15;color:var(--text); }
     .exp-badge {
@@ -141,7 +177,7 @@
     .exp-bullets li { font-size:1rem;color:var(--sub);padding-left:1.5rem;position:relative;line-height:1.75; }
     .exp-bullets li::before { content:'→';position:absolute;left:0;color:var(--dim);font-family:var(--mono);font-size:.8rem; }
     .exp-tags { display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem; }
-    .etag { font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;padding:.3rem .8rem;border:1px solid var(--border2);color:var(--muted);font-weight:400; }
+    .etag { font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;padding:.3rem .8rem;border:1px solid var(--border2);color:var(--muted); }
 
     /* PROJECTS */
     .project-grid { display:grid;gap:1px;background:var(--border); }
@@ -162,7 +198,7 @@
       color:var(--gold);opacity:.035;transition:opacity .3s;line-height:1;
       pointer-events:none;user-select:none;
     }
-    .proj-year { font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.12em;margin-bottom:.75rem;font-weight:400; }
+    .proj-year { font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.12em;margin-bottom:.75rem; }
     .proj-title { font-family:var(--serif);font-size:2.1rem;font-weight:400;margin-bottom:1rem;line-height:1.15;color:var(--text); }
     .proj-desc { font-size:.975rem;color:var(--sub);line-height:1.85;max-width:540px;margin-bottom:1.5rem; }
     .proj-tags { display:flex;flex-wrap:wrap;gap:.5rem; }
@@ -195,8 +231,25 @@
     .c-label { font-family:var(--mono);font-size:.62rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.6rem;font-weight:500; }
     .c-val { font-family:var(--serif);font-size:1.2rem;color:var(--text); }
 
+    /* FOOTER CV STRIP */
+    .footer-cv {
+      background:var(--surface);
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      padding:2rem 0;
+      position:relative;z-index:2;
+    }
+    .footer-cv-inner {
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:1.5rem;
+    }
+    .footer-cv-text { }
+    .footer-cv-title { font-family:var(--serif);font-size:1.3rem;font-weight:400;font-style:italic;color:var(--text); }
+    .footer-cv-sub { font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.1em;margin-top:.25rem; }
+    .footer-cv-btns { display:flex;gap:.75rem; }
+
     /* FOOTER */
-    footer { padding:3rem 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2; }
+    footer { padding:2.5rem 0;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2; }
     footer p { font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.08em; }
     footer span { color:var(--gold);font-weight:500; }
 
@@ -211,6 +264,7 @@
       .skills-wrap{grid-template-columns:1fr;}
       .contact-wrap{grid-template-columns:1fr;}
       .project{grid-template-columns:1fr;padding:2rem;}
+      .footer-cv-inner{flex-direction:column;align-items:flex-start;}
       footer{flex-direction:column;gap:.75rem;text-align:center;}
     }
   </style>
@@ -232,6 +286,7 @@
 
 <div class="wrap">
 
+  <!-- HERO -->
   <section class="hero" style="border-top:none;">
     <div class="hero-bg-num">SM</div>
     <div class="hero-inner">
@@ -243,14 +298,28 @@
       <p class="hero-desc">
         I build things end-to-end — from ingesting raw data through REST APIs to training object detection models on Mars-analog terrain. Data pipelines, computer vision, systems programming.
       </p>
+
+      <!-- CV DOWNLOAD BLOCK -->
+      <div class="cv-block">
+        <p class="cv-block-label">Download CV</p>
+        <div class="cv-btns">
+          <a href="cv.pdf" class="cv-btn cv-btn-en" target="_blank">
+            <span class="cv-flag">🇬🇧</span> English CV ↓
+          </a>
+          <a href="cv-it.pdf" class="cv-btn cv-btn-it" target="_blank">
+            <span class="cv-flag">🇮🇹</span> CV in Italiano ↓
+          </a>
+        </div>
+      </div>
+
       <div class="hero-ctas">
         <a href="https://linkedin.com/in/salma-mohammadzadeh" class="btn btn-gold" target="_blank">LinkedIn ↗</a>
         <a href="https://github.com/salmaze" class="btn btn-outline" target="_blank">GitHub ↗</a>
-        <a href="cv.pdf" class="btn btn-outline" target="_blank">CV PDF ↗</a>
       </div>
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="sec-head r">
       <span class="sec-num">01</span>
@@ -277,6 +346,7 @@
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <div class="sec-head r">
       <span class="sec-num">02</span>
@@ -311,6 +381,7 @@
     </div>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
     <div class="sec-head r">
       <span class="sec-num">03</span>
@@ -336,6 +407,7 @@
     </div>
   </section>
 
+  <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="sec-head r">
       <span class="sec-num">04</span>
@@ -364,6 +436,7 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <div class="sec-head r">
       <span class="sec-num">05</span>
@@ -389,6 +462,26 @@
     </div>
   </section>
 
+</div>
+
+<!-- FOOTER CV STRIP -->
+<div class="footer-cv">
+  <div class="wrap">
+    <div class="footer-cv-inner">
+      <div class="footer-cv-text">
+        <p class="footer-cv-title">Download my CV</p>
+        <p class="footer-cv-sub">Available in English and Italian</p>
+      </div>
+      <div class="footer-cv-btns">
+        <a href="cv.pdf" class="cv-btn cv-btn-en" target="_blank" style="min-width:160px;">
+          <span class="cv-flag">🇬🇧</span> English CV ↓
+        </a>
+        <a href="cv-it.pdf" class="cv-btn cv-btn-it" target="_blank" style="min-width:160px;">
+          <span class="cv-flag">🇮🇹</span> CV in Italiano ↓
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <footer>
